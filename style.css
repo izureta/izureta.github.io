@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  flex-grow: 1;
+  padding: 20px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+#svg {
+  width: 1000px;
+  height: 800px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+.step-card {
+  width: 1000px;
+  height: 100px;
+}
+
+.errors-card {
+  width: 360px;
+  height: 100px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+textarea {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  resize: none;
+  flex-grow: 1;
+  padding: 20px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+#step-window {
+  width: 1000px;
+  height: 100px;
+}
+
+#algorithm-window {
+  width: 1000px;
+  height: 200px;
+}
+
+#error-window {
+  width: 360px;
+  height: 100px;
+}
+
+.buttons-card {
+  width: 360px;
+  height: 1300px;
+}
+
+.row-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.column-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.right-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+form label {
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+form input[type="number"] {
+  width: 100px;
+  height: 25px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+form button {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  height: 30px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.button-name {
+  font-size: 18px;
+  color: black;
+  font-weight: bold;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
+
+input[type="range"] {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}

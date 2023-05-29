@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cartesian Tree Visualization</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Cartesian Tree Visualization</h1>
+      <div class="row-container">
+        <div class="column-container">
+          <textarea id="step-window" readonly></textarea>
+          <svg id="svg"></svg>
+          <textarea id="algorithm-window" readonly></textarea>
+        </div>
+        <div class="column-container">
+          <textarea id="error-window" readonly></textarea>
+
+          <div class="card buttons-card">
+            <form>
+              <button type="button" onclick="ClearAllButton()">
+                Clear All
+              </button>
+              <div class="row-container">
+                <button type="button" onclick="PlayButton()">Play</button>
+                <button type="button" onclick="PauseButton()">Pause</button>
+              </div>
+              <div class="row-container">
+                <button type="button" onclick="NextStepButton()">
+                  Next step
+                </button>
+                <button type="button" onclick="PrevStepButton()">
+                  Prev step
+                </button>
+              </div>
+              <label>
+                <input
+                  type="checkbox"
+                  name="tick"
+                  id="tick"
+                  value="enabled"
+                  checked
+                />
+                Show steps
+              </label>
+
+              <span class="button-name">Build new tree</span>
+
+              <div class="row-container">
+                <div class="row-container">
+                  <p>Key:</p>
+                  <input type="number" id="build-key" name="key" />
+                </div>
+                <div class="row-container">
+                  <p>Priority:</p>
+                  <input
+                    type="number"
+                    id="build-priority"
+                    name="priority"
+                    min="1"
+                    step="1"
+                    max="12"
+                  />
+                </div>
+              </div>
+
+              <div class="row-container">
+                <button type="button" onclick="BuildInsertButton()">
+                  Add to tree
+                </button>
+                <button type="button" onclick="BuildDeleteButton()">
+                  Erase from new tree
+                </button>
+                <button type="button" onclick="BuildButton()">
+                  Build tree
+                </button>
+              </div>
+              <div class="row-container">
+                <button type="button" onclick="BuildClearButton()">
+                  Clear tree
+                </button>
+                <button type="button" onclick="SplitExample1Button()">
+                  Split example 1
+                </button>
+                <button type="button" onclick="SplitExample2Button()">
+                  Split example 2
+                </button>
+              </div>
+              <div class="row-container">
+                <button type="button" onclick="MergeExample1Button()">
+                  Merge example 1
+                </button>
+                <button type="button" onclick="MergeExample2Button()">
+                  Merge example 2
+                </button>
+              </div>
+
+              <span class="button-name">Build random tree</span>
+
+              <div class="row-container">
+                <p>Number of nodes:</p>
+                <input type="number" id="random-nodes-count" name="key" />
+              </div>
+
+              <p>Randomness:</p>
+              <input
+                type="range"
+                id="tree-randomness"
+                name="tree-randomness"
+                min="0"
+                max="100"
+                value="50"
+              />
+              <button type="button" onclick="BuildRandomTreeButton()">
+                Build
+              </button>
+
+              <span class="button-name">Insert/Delete</span>
+
+              <div class="row-container">
+                <div class="row-container">
+                  <p>Key:</p>
+                  <input
+                    type="number"
+                    id="insert-delete-key"
+                    name="key"
+                    min="1"
+                    step="1"
+                    max="18"
+                  />
+                </div>
+                <div class="row-container">
+                  <p>Priority:</p>
+                  <input
+                    type="number"
+                    id="insert-delete-priority"
+                    name="priority"
+                    min="1"
+                    step="1"
+                    max="12"
+                  />
+                </div>
+              </div>
+              <div class="row-container">
+                <p>Root key:</p>
+                <input
+                  type="number"
+                  id="insert-delete-root-key"
+                  name="root key"
+                  min="1"
+                  step="1"
+                  max="18"
+                />
+              </div>
+
+              <div class="row-container">
+                <button type="button" onclick="InsertButton()">Insert</button>
+                <button type="button" onclick="DeleteButton()">Delete</button>
+              </div>
+
+              <span class="button-name">Merge</span>
+              <div class="row-container">
+                <p>Left root key:</p>
+                <input
+                  type="number"
+                  id="merge-root-key-1"
+                  name="root key"
+                  min="1"
+                  step="1"
+                  max="18"
+                />
+              </div>
+              <div class="row-container">
+                <p>Right root key:</p>
+                <input
+                  type="number"
+                  id="merge-root-key-2"
+                  name="root key"
+                  min="1"
+                  step="1"
+                  max="18"
+                />
+              </div>
+              <button type="button" onclick="MergeButton()">Merge</button>
+
+              <span class="button-name">Split</span>
+              <div class="row-container">
+                <p>Root key:</p>
+                <input type="number" id="split-root-key" name="split" />
+              </div>
+              <div class="row-container">
+                <p>Split by key:</p>
+                <input type="number" id="split-key" name="split" />
+              </div>
+              <button type="button" onclick="SplitButton()">Split</button>
+
+              <span class="button-name">Rerandomize priorities</span>
+              <p>Randomness:</p>
+              <input
+                type="range"
+                id="priority-randomness"
+                name="priority-randomness"
+                min="0"
+                max="100"
+                value="50"
+              />
+              <button type="button" onclick="RerandomizePrioritiesButton()">
+                Randomize
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="graphics.js"></script>
+    <script src="tree.js"></script>
+  </body>
+</html>
