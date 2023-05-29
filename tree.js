@@ -342,7 +342,7 @@ function EnabledShowSteps() {
 }
 
 async function PlayButton() {
-  ErrorHandler("Everything is ok!");
+  ErrorHandler("");
   if (state_array.length === 0) {
     return;
   }
@@ -361,7 +361,7 @@ async function PlayButton() {
 }
 
 async function PauseButton() {
-  ErrorHandler("Everything is ok!");
+  ErrorHandler("");
   if (state_array.length === 0) {
     return;
   }
@@ -374,7 +374,7 @@ async function PauseHandler() {
 }
 
 async function NextStepButton() {
-  ErrorHandler("Everything is ok!");
+  ErrorHandler("");
   if (state_array.length === 0) {
     return;
   }
@@ -389,7 +389,7 @@ async function NextStepButton() {
 }
 
 async function PrevStepButton() {
-  ErrorHandler("Everything is ok!");
+  ErrorHandler("");
   if (state_array.length === 0) {
     return;
   }
@@ -417,7 +417,7 @@ function GoToLastStep() {
 }
 
 async function BuildInsertButton() {
-  ErrorHandler("Everything is ok!");
+  ErrorHandler("");
   GoToLastStep();
   let key = Number(document.getElementById("build-key").value);
   let priority = Number(document.getElementById("build-priority").value);
@@ -449,7 +449,7 @@ async function BuildInsertButton() {
 }
 
 async function BuildDeleteButton() {
-  ErrorHandler("Everything is ok!");
+  ErrorHandler("");
   GoToLastStep();
   let key = Number(document.getElementById("build-key").value);
   let priority = Number(document.getElementById("build-priority").value);
@@ -509,7 +509,7 @@ function BuildTree(array) {
 }
 
 async function BuildButton() {
-  ErrorHandler("Everything is ok!");
+  ErrorHandler("");
   GoToLastStep();
   UndrawTree();
   cur_tree.sort((a, b) => a.x - b.x);
@@ -529,7 +529,7 @@ async function BuildButton() {
 }
 
 async function BuildClearButton() {
-  ErrorHandler("Everything is ok!");
+  ErrorHandler("");
   GoToLastStep();
   UndrawTree();
   for (let i = 0; i < cur_tree.length; ++i) {
@@ -548,7 +548,7 @@ async function BuildClearButton() {
 
 async function ClearAllButton() {
   current_message = "";
-  ErrorHandler("Everything is ok!");
+  ErrorHandler("");
   ShowStepMessage();
   ShowAlgorithmPlan("");
   GoToLastStep();
@@ -574,7 +574,7 @@ function GetMinKey(node) {
 }
 
 async function MergeButton() {
-  ErrorHandler("Everything is ok!");
+  ErrorHandler("");
   ShowAlgorithmPlan(merge_plan);
   current_message = "Current step: " + "Starting merge operation.";
   if (cur_tree.length !== 0) {
@@ -639,7 +639,7 @@ async function MergeButton() {
 }
 
 async function SplitButton() {
-  ErrorHandler("Everything is ok!");
+  ErrorHandler("");
   GoToLastStep();
   ShowAlgorithmPlan(split_plan);
   current_message = "Current step: " + "Starting split operation.";
@@ -696,7 +696,7 @@ async function SplitButton() {
 }
 
 async function InsertButton() {
-  ErrorHandler("Everything is ok!");
+  ErrorHandler("");
   GoToLastStep();
   ShowAlgorithmPlan(insert_plan);
   current_message = "Current step: " + "Starting insert operation.";
@@ -797,7 +797,7 @@ async function InsertButton() {
 }
 
 async function DeleteButton() {
-  ErrorHandler("Everything is ok!");
+  ErrorHandler("");
   GoToLastStep();
   ShowAlgorithmPlan(delete_plan);
   current_message = "Current step: " + "Starting delete operation.";
@@ -936,7 +936,7 @@ async function DeleteButton() {
 }
 
 async function BuildRandomTreeButton() {
-  ErrorHandler("Everything is ok!");
+  ErrorHandler("");
   GoToLastStep();
   if (cur_tree.length !== 0) {
     ErrorHandler(
@@ -1041,7 +1041,7 @@ function GetCurTree(root) {
 }
 
 async function RerandomizePrioritiesButton() {
-  ErrorHandler("Everything is ok!");
+  ErrorHandler("");
   GoToLastStep();
   if (cur_tree.length !== 0) {
     ErrorHandler(
