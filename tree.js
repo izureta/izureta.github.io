@@ -1010,7 +1010,7 @@ async function BuildRandomTreeButton() {
   randomness = 100 * Math.sqrt(randomness / 100);
   for (let i = 0; i < random_priorities.length; ++i) {
     if (Math.floor(Math.random() * 100) < randomness) {
-      let swap_index = Math.floor(Math.random() * i) + 1;
+      let swap_index = Math.floor(Math.random() * (i + 1));
       if (swap_index > i) {
         swap_index = i;
       }
@@ -1081,7 +1081,7 @@ async function RerandomizePrioritiesButton() {
   randomness = 100 * Math.sqrt(randomness / 100);
   for (let i = 0; i < random_priorities.length; ++i) {
     if (Math.floor(Math.random() * 100) < randomness) {
-      let swap_index = Math.floor(Math.random() * i) + 1;
+      let swap_index = Math.floor(Math.random() * (i + 1));
       if (swap_index > i) {
         swap_index = i;
       }
