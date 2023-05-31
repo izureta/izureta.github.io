@@ -1092,6 +1092,8 @@ async function RerandomizePrioritiesButton() {
     }
   }
 
+  node_array.sort((a, b) => a.x - b.x);
+
   for (let i = 0; i < node_array.length; ++i) {
     if (node_array[i].parent === null) {
       GetCurTree(node_array[i]);
