@@ -689,7 +689,7 @@ async function SplitButton() {
   } else {
     current_state = state_array.length - 1;
     node_array = state_array[current_state].node_array;
-    current_message = state_array[current_state].current_message;
+    current_message = state_array[current_state].step_message;
     DrawTree();
   }
   return;
